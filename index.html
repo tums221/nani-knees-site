@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nani's Knees — Own Your Body.</title>
+<meta name="description" content="The 12-week strength training program for women who want to dance. Written by a woman, for women. Lifetime access to the ebook, plus the interactive workout app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a0f0a;
+    --oxblood: #5c1a1a;
+    --oxblood-deep: #3d0f0f;
+    --bordeaux: #7a2020;
+    --ember: #a63e1f;
+    --terra: #c4705a;
+    --flesh: #e8b79f;
+    --silk: #f5e6d8;
+    --cream: #faf3ec;
+    --bone: #fffbf5;
+    --gold: #c9a961;
+    --gold-deep: #a0843d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--silk);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+  }
+  /* noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' /%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  .narrow { max-width: 900px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 15, 10, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(245, 230, 216, 0.06);
+  }
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--silk);
+    letter-spacing: -0.02em;
+  }
+  .nav-brand em {
+    font-style: italic;
+    color: var(--terra);
+  }
+  .nav-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--flesh);
+    padding: 10px 18px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--silk); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 160px 0 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 120px 0 60px; }
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow::before {
+    content: '—';
+    margin-right: 12px;
+    opacity: 0.6;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(56px, 9vw, 128px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--silk);
+    margin-bottom: 32px;
+    font-variation-settings: "opsz" 144;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--terra);
+  }
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.5vw, 26px);
+    color: var(--flesh);
+    max-width: 580px;
+    margin-bottom: 44px;
+    line-height: 1.5;
+    opacity: 0.88;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .cta-primary {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--flesh);
+    padding: 18px 32px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cta-primary:hover { background: var(--silk); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(196,112,90,0.3); }
+  .cta-primary::after { content: '→'; font-size: 18px; letter-spacing: 0; }
+  .cta-secondary {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--silk);
+    background: transparent;
+    padding: 18px 32px;
+    border-radius: 2px;
+    border: 1px solid rgba(245, 230, 216, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .cta-secondary:hover { border-color: var(--flesh); background: rgba(232, 183, 159, 0.08); }
+
+  /* Hero visual — ebook mockup */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 3/4;
+    max-width: 460px;
+    margin-left: auto;
+  }
+  @media (max-width: 900px) {
+    .hero-visual { margin: 0 auto; max-width: 320px; }
+  }
+  .ebook-mockup {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: perspective(1400px) rotateY(-12deg) rotateX(4deg);
+    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
+  }
+  .ebook-mockup:hover { transform: perspective(1400px) rotateY(-6deg) rotateX(2deg); }
+  .ebook-cover {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(155deg, #E8B79F 0%, #C4705A 60%, #7A2020 100%);
+    border-radius: 2px 6px 6px 2px;
+    box-shadow:
+      0 30px 80px rgba(0,0,0,0.6),
+      inset -20px 0 40px rgba(0,0,0,0.15),
+      inset 2px 0 4px rgba(255,255,255,0.1);
+    overflow: hidden;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .ebook-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.4), transparent);
+  }
+  .ebook-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,251,245,0.15) 0%, transparent 55%);
+  }
+  .ebook-top { position: relative; z-index: 2; }
+  .ebook-eyebrow {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: rgba(26, 15, 10, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .ebook-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(26, 15, 10, 0.3);
+    margin-bottom: 12px;
+  }
+  .ebook-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 52px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144;
+  }
+  .ebook-title em { font-style: italic; color: var(--oxblood); }
+  .ebook-bottom { position: relative; z-index: 2; }
+  .ebook-author {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--ink);
+    opacity: 0.8;
+  }
+  .ebook-meta {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(26, 15, 10, 0.55);
+    margin-top: 8px;
+  }
+
+  /* Floating badge on the mockup */
+  .hero-badge {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 12px 16px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4);
+    transform: rotate(-8deg);
+    z-index: 3;
+  }
+  .hero-badge-small {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .hero-badge-big {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    overflow: hidden;
+    padding: 22px 0;
+    border-top: 1px solid rgba(245, 230, 216, 0.08);
+    border-bottom: 1px solid rgba(245, 230, 216, 0.08);
+    background: rgba(92, 26, 26, 0.1);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee span {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--flesh);
+    opacity: 0.6;
+  }
+  .marquee span::before {
+    content: '✦';
+    color: var(--gold);
+    margin-right: 60px;
+    opacity: 0.5;
+  }
+
+  /* SECTIONS */
+  .section { padding: 120px 0; }
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-eyebrow-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--gold);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(44px, 6vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--silk);
+    margin-bottom: 32px;
+  }
+  h2 em { font-style: italic; color: var(--terra); }
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(18px, 1.8vw, 22px);
+    line-height: 1.55;
+    color: var(--flesh);
+    max-width: 720px;
+    opacity: 0.85;
+    margin-bottom: 60px;
+  }
+
+  /* MANIFESTO (problem/promise) */
+  .manifesto {
+    background: linear-gradient(180deg, transparent 0%, rgba(92, 26, 26, 0.15) 50%, transparent 100%);
+  }
+  .manifesto-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3.8vw, 52px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--silk);
+    max-width: 900px;
+  }
+  .manifesto-text em { font-style: italic; color: var(--terra); }
+  .manifesto-text p { margin-bottom: 32px; }
+  .manifesto-text p:last-child { margin-bottom: 0; color: var(--flesh); font-size: 0.7em; opacity: 0.9; }
+
+  /* WHAT'S INSIDE — feature grid */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(245, 230, 216, 0.08);
+  }
+  @media (max-width: 900px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature {
+    background: var(--ink);
+    padding: 48px 36px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    transition: background 0.4s;
+  }
+  .feature:hover { background: rgba(92, 26, 26, 0.2); }
+  .feature-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 64px;
+    color: var(--gold);
+    line-height: 0.9;
+    opacity: 0.9;
+  }
+  .feature h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.1;
+    color: var(--silk);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .feature h3 em { font-style: italic; color: var(--terra); }
+  .feature p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245, 230, 216, 0.7);
+  }
+
+  /* 12 WEEKS GRID */
+  .weeks-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(92, 26, 26, 0.15) 100%);
+  }
+  .weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 780px) { .weeks-grid { grid-template-columns: repeat(2, 1fr); } }
+  .week-card {
+    aspect-ratio: 1;
+    background: rgba(245, 230, 216, 0.04);
+    border: 1px solid rgba(245, 230, 216, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .week-card:hover {
+    background: rgba(92, 26, 26, 0.15);
+    border-color: rgba(196, 112, 90, 0.4);
+  }
+  .week-card-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--silk);
+  }
+  .week-card-num em { font-style: italic; color: var(--terra); }
+  .week-card-phase {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--flesh);
+    opacity: 0.7;
+  }
+  .week-card.deload {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.08), rgba(201, 169, 97, 0.02));
+    border-color: rgba(201, 169, 97, 0.25);
+  }
+  .week-card.deload .week-card-num em { color: var(--gold); }
+  .week-card.deload .week-card-phase { color: var(--gold); }
+
+  /* SOCIAL PROOF — testimonial */
+  .quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 1.3;
+    color: var(--silk);
+    letter-spacing: -0.02em;
+    max-width: 820px;
+  }
+  .quote::before {
+    content: '"';
+    font-size: 2em;
+    line-height: 0;
+    color: var(--terra);
+    vertical-align: -0.4em;
+    margin-right: 4px;
+  }
+  .quote-attr {
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--flesh);
+    opacity: 0.7;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    background: radial-gradient(ellipse at top, rgba(92, 26, 26, 0.3) 0%, transparent 60%);
+    padding: 140px 0;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+  }
+  @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; gap: 14px; } }
+  .price-card {
+    background: var(--ink);
+    border: 1px solid rgba(245, 230, 216, 0.12);
+    padding: 40px 30px 36px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s;
+  }
+  .price-card:hover {
+    border-color: rgba(196, 112, 90, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  }
+  .price-card.featured {
+    background: linear-gradient(175deg, var(--oxblood) 0%, var(--oxblood-deep) 100%);
+    border: 1px solid var(--terra);
+    transform: scale(1.04);
+    box-shadow: 0 24px 60px rgba(92, 26, 26, 0.5);
+  }
+  .price-card.featured:hover { transform: scale(1.04) translateY(-6px); }
+  .price-ribbon {
+    position: absolute;
+    top: -1px;
+    right: 24px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 6px 14px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .price-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .price-card.featured .price-eyebrow { color: var(--flesh); }
+  .price-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    color: var(--silk);
+    margin-bottom: 22px;
+  }
+  .price-name em { font-style: italic; color: var(--terra); }
+  .price-amount {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--silk);
+    letter-spacing: -0.04em;
+    margin-bottom: 4px;
+    font-variation-settings: "opsz" 144;
+  }
+  .price-amount .dollar {
+    font-size: 0.55em;
+    vertical-align: 0.45em;
+    margin-right: 4px;
+    opacity: 0.7;
+  }
+  .price-period {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--flesh);
+    opacity: 0.7;
+    margin-bottom: 32px;
+  }
+  .price-features {
+    list-style: none;
+    margin-bottom: 36px;
+    flex: 1;
+  }
+  .price-features li {
+    padding: 10px 0;
+    font-size: 14px;
+    color: rgba(245, 230, 216, 0.8);
+    border-bottom: 1px solid rgba(245, 230, 216, 0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .price-features li::before {
+    content: '—';
+    color: var(--terra);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .price-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--flesh);
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+  .price-cta:hover { background: var(--silk); }
+  .price-card.featured .price-cta { background: var(--terra); color: var(--bone); }
+  .price-card.featured .price-cta:hover { background: var(--flesh); color: var(--ink); }
+  .price-save {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* FAQ */
+  .faq { max-width: 780px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid rgba(245, 230, 216, 0.1);
+    padding: 28px 0;
+    cursor: pointer;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .faq-q-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--silk);
+    letter-spacing: -0.01em;
+  }
+  .faq-q-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--flesh);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--flesh);
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-q-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.3s, padding 0.3s;
+    opacity: 0;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    opacity: 1;
+    padding-top: 16px;
+  }
+  .faq-a p {
+    color: rgba(245, 230, 216, 0.75);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* EMAIL CAPTURE */
+  .email-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 15, 10, 0.95) 100%);
+    padding: 100px 0;
+    text-align: center;
+  }
+  .email-form {
+    display: flex;
+    max-width: 540px;
+    margin: 40px auto 0;
+    gap: 2px;
+  }
+  @media (max-width: 600px) { .email-form { flex-direction: column; gap: 10px; } }
+  .email-input {
+    flex: 1;
+    padding: 18px 20px;
+    background: rgba(245, 230, 216, 0.05);
+    border: 1px solid rgba(245, 230, 216, 0.15);
+    color: var(--silk);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .email-input:focus {
+    border-color: var(--terra);
+    background: rgba(245, 230, 216, 0.08);
+  }
+  .email-input::placeholder { color: rgba(245, 230, 216, 0.4); }
+  .email-submit {
+    padding: 18px 28px;
+    background: var(--flesh);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.25s;
+  }
+  .email-submit:hover { background: var(--silk); }
+  .email-note {
+    margin-top: 18px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 230, 216, 0.4);
+  }
+  .email-success {
+    display: none;
+    margin-top: 20px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--terra);
+  }
+  .email-success.show { display: block; }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(245, 230, 216, 0.08);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 780px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--silk);
+    margin-bottom: 18px;
+  }
+  .footer-brand em { color: var(--terra); }
+  .footer-tag {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(245, 230, 216, 0.5);
+    max-width: 320px;
+  }
+  .footer-col h4 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 13px;
+    color: var(--flesh);
+    text-decoration: none;
+    padding: 5px 0;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .footer-col a:hover { opacity: 1; }
+  .footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(245, 230, 216, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 230, 216, 0.3);
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.2, 0, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0, 0.2, 1); }
+  .reveal.on { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">Nani's <em>Knees</em></div>
+    <a href="#pricing" class="nav-cta">Start Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow reveal">The 12-Week Strength Blueprint</div>
+          <h1 class="reveal">Own <em>your</em><br/>body.</h1>
+          <p class="hero-sub reveal">A strength program written by a woman, for women who want to move like they mean it. Three phases. Twelve weeks. No filler, no fluff, no fitness-bro nonsense.</p>
+          <div class="hero-cta-row reveal">
+            <a href="#pricing" class="cta-primary">Start the Program</a>
+            <a href="#inside" class="cta-secondary">See Inside</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-badge">
+            <div class="hero-badge-small">from</div>
+            <div class="hero-badge-big">$37</div>
+          </div>
+          <div class="ebook-mockup">
+            <div class="ebook-cover">
+              <div class="ebook-top">
+                <div class="ebook-eyebrow">Est. 2026 · Vol. 01</div>
+                <div class="ebook-line"></div>
+                <div class="ebook-title">Nani's<br/><em>Knees</em><br/>Strength<br/>Blueprint</div>
+              </div>
+              <div class="ebook-bottom">
+                <div class="ebook-line"></div>
+                <div class="ebook-author">by Nani</div>
+                <div class="ebook-meta">77 pages · 12 weeks · 46 exercises</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Hip thrust. Bar at the crease. Drive.</span>
+      <span>Twelve weeks. Three phases.</span>
+      <span>Built for the floor. Backed by science.</span>
+      <span>Strong is the new soft.</span>
+      <span>Own your body.</span>
+      <span>Hip thrust. Bar at the crease. Drive.</span>
+      <span>Twelve weeks. Three phases.</span>
+      <span>Built for the floor. Backed by science.</span>
+      <span>Strong is the new soft.</span>
+      <span>Own your body.</span>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="section manifesto">
+    <div class="narrow">
+      <div class="section-eyebrow reveal">
+        <span class="section-eyebrow-num">01</span> The Manifesto
+      </div>
+      <div class="manifesto-text reveal">
+        <p>You already <em>know</em> what a real night of dancing requires. You've spent enough time on the dance floor to feel where the power comes from.</p>
+        <p>What's missing isn't desire. It's a <em>training program</em> written by someone who actually understands the muscles behind the movement.</p>
+        <p>— This is that program.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section" id="inside">
+    <div class="container">
+      <div class="section-eyebrow reveal">
+        <span class="section-eyebrow-num">02</span> What's Inside
+      </div>
+      <h2 class="reveal">The whole <em>thing.</em></h2>
+      <p class="lede reveal">Not a PDF crammed with stock photos. An 77-page manual, an interactive app, and a complete instructional library. Every exercise, every rep, every rest — specified.</p>
+
+      <div class="feature-grid reveal">
+        <div class="feature">
+          <div class="feature-num">i.</div>
+          <div>
+            <h3>12 Weeks of <em>actual</em> training</h3>
+            <p>Three progressive phases — Foundation, Build, Performance — with a full deload at week twelve. Monday, Wednesday, Friday. Each session 50–70 minutes.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">ii.</div>
+          <div>
+            <h3>46 exercises <em>broken</em> down</h3>
+            <p>Setup, starting position, numbered execution, form cues, common mistakes, breathing. Every one. So you never have to guess on the gym floor.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">iii.</div>
+          <div>
+            <h3>The interactive <em>app</em></h3>
+            <p>Tap to check off sets. Rest timer. Weight and rep tracking. Week-by-week progression. Saved privately, just for you, across every session.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">iv.</div>
+          <div>
+            <h3>Pelvic drills <em>most</em> programs skip</h3>
+            <p>Cat-cow circles. Dead bugs. Standing pelvic tilts at tempo. The isolation work that turns strength into movement.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">v.</div>
+          <div>
+            <h3>Cycle-aware <em>programming</em></h3>
+            <p>RIR-based auto-regulation handles natural performance variation. No rigid phase-syncing. No BS. Built for how your body actually works.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">vi.</div>
+          <div>
+            <h3>Warm-ups &<br/><em>stretches</em></h3>
+            <p>A 4-exercise glute activation sequence before every session. Five anatomy-specific stretches after. Your pelvic floor will thank you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 WEEKS -->
+  <section class="section weeks-section">
+    <div class="container">
+      <div class="section-eyebrow reveal">
+        <span class="section-eyebrow-num">03</span> The Arc
+      </div>
+      <h2 class="reveal">Twelve weeks. <em>Three</em> phases.</h2>
+      <p class="lede reveal">The program isn't linear — it's structured. Each phase has a clear goal. Each week builds on the last. Week twelve is the deload, and it's not optional.</p>
+
+      <div class="weeks-grid reveal">
+        <div class="week-card"><span class="week-card-phase">Foundation</span><span class="week-card-num">01</span></div>
+        <div class="week-card"><span class="week-card-phase">Foundation</span><span class="week-card-num">02</span></div>
+        <div class="week-card"><span class="week-card-phase">Foundation</span><span class="week-card-num">03</span></div>
+        <div class="week-card"><span class="week-card-phase">Foundation</span><span class="week-card-num">04</span></div>
+        <div class="week-card"><span class="week-card-phase">Build</span><span class="week-card-num">05</span></div>
+        <div class="week-card"><span class="week-card-phase">Build</span><span class="week-card-num">06</span></div>
+        <div class="week-card"><span class="week-card-phase">Build</span><span class="week-card-num">07</span></div>
+        <div class="week-card"><span class="week-card-phase">Build</span><span class="week-card-num">08</span></div>
+        <div class="week-card"><span class="week-card-phase">Performance</span><span class="week-card-num">09</span></div>
+        <div class="week-card"><span class="week-card-phase">Performance</span><span class="week-card-num">10</span></div>
+        <div class="week-card"><span class="week-card-phase">Performance</span><span class="week-card-num">11</span></div>
+        <div class="week-card deload"><span class="week-card-phase">Deload</span><span class="week-card-num"><em>12</em></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / POSITIONING -->
+  <section class="section">
+    <div class="narrow">
+      <div class="section-eyebrow reveal">
+        <span class="section-eyebrow-num">04</span> What Makes It Different
+      </div>
+      <div class="quote reveal">
+        This is not a "glute program." It is a training plan for women who already know their body is a weapon, and want to sharpen it.
+      </div>
+      <div class="quote-attr reveal">— Nani, on why she wrote it</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-eyebrow reveal">
+        <span class="section-eyebrow-num">05</span> Choose Your Plan
+      </div>
+      <h2 class="reveal">Three ways <em>in.</em></h2>
+      <p class="lede reveal">Start with the PDF. Add the app for progress tracking. Or go all in with lifetime access — everything, forever, including every future update.</p>
+
+      <div class="pricing-grid reveal">
+        <!-- Ebook -->
+        <div class="price-card">
+          <div class="price-eyebrow">The Book</div>
+          <div class="price-name">Ebook <em>only</em></div>
+          <div class="price-amount"><span class="dollar">$</span>37</div>
+          <div class="price-period">One-time</div>
+          <ul class="price-features">
+            <li>Complete 77-page PDF</li>
+            <li>All 12 weeks, 46 exercises</li>
+            <li>Every workout, every cue</li>
+            <li>Lifetime download access</li>
+          </ul>
+          <a href="#" class="price-cta" data-plan="ebook">Get the Ebook</a>
+        </div>
+
+        <!-- Annual (featured) -->
+        <div class="price-card featured">
+          <div class="price-ribbon">Most Popular</div>
+          <div class="price-eyebrow">The Full Experience</div>
+          <div class="price-name">Annual <em>Access</em></div>
+          <div class="price-amount"><span class="dollar">$</span>79</div>
+          <div class="price-period">Per year · $6.58/mo</div>
+          <ul class="price-features">
+            <li>Everything in Ebook</li>
+            <li>Interactive workout app</li>
+            <li>Set tracking + rest timer</li>
+            <li>Progress dashboard</li>
+            <li>All program updates</li>
+          </ul>
+          <a href="#" class="price-cta" data-plan="annual">Start Annual</a>
+          <div class="price-save">Save $77 vs. monthly</div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="price-card">
+          <div class="price-eyebrow">Flex</div>
+          <div class="price-name">Monthly</div>
+          <div class="price-amount"><span class="dollar">$</span>12.99</div>
+          <div class="price-period">Per month · cancel anytime</div>
+          <ul class="price-features">
+            <li>Everything in Ebook</li>
+            <li>Interactive workout app</li>
+            <li>Set tracking + rest timer</li>
+            <li>Progress dashboard</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <a href="#" class="price-cta" data-plan="monthly">Start Monthly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-eyebrow reveal" style="justify-content: center; text-align: center; margin-bottom: 30px;">
+        <span class="section-eyebrow-num">06</span> Common Questions
+      </div>
+      <h2 class="reveal" style="text-align: center; margin-bottom: 80px;"><em>Answered.</em></h2>
+
+      <div class="faq reveal">
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">Do I need a gym?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Yes — this program is built around full gym access. You'll use a barbell, cables, leg press, and dumbbells. A full commercial gym or well-equipped home gym will have everything you need.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">What if I've never lifted before?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>The program assumes "some" gym experience — you've done squats, you know what a barbell is, you can find your way around a cable machine. Phase 1 is built to teach the movement patterns slowly and safely. If you're truly brand new, work with a trainer for 2–3 sessions on basic squat and hinge patterns before starting.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">How does the app work?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Open it in any mobile browser — no download needed. Tap to select your week. Pick the workout. Check off sets as you complete them, log your weight and reps, and a rest timer pops up automatically. Everything is saved privately to your account across sessions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">Can I cancel anytime?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Yes. Monthly plans cancel anytime from your account page — you'll keep access until the end of the billing period. Annual plans renew automatically unless you cancel before renewal. The ebook is yours to keep forever regardless.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">What if I'm on my period / pregnant / postpartum?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>The program uses RIR-based auto-regulation, which adjusts for natural performance variation throughout your cycle automatically — no rigid phase-syncing required. For pregnancy or the immediate postpartum window, please consult your doctor and a pelvic floor physiotherapist before starting any new strength program.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <div class="faq-q-text">Is there a refund policy?</div>
+            <div class="faq-q-icon">+</div>
+          </div>
+          <div class="faq-a">
+            <p>Yes. If the program isn't for you, email within 24 hours of purchase for a full refund — no questions asked. After 24 hours, all sales are final.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="section email-section">
+    <div class="narrow">
+      <div class="section-eyebrow reveal" style="justify-content: center; text-align: center;">
+        <span class="section-eyebrow-num">07</span> Not Ready Yet?
+      </div>
+      <h2 class="reveal">Get the first <em>chapter.</em></h2>
+      <p class="lede reveal" style="margin-left: auto; margin-right: auto; text-align: center;">Drop your email and we'll send you the Phase 1 preview — four exercises, full instructions, completely free. See if the voice and the structure work for you before you commit.</p>
+      <form class="email-form reveal" id="emailForm">
+        <input type="email" required placeholder="your@email.com" class="email-input"/>
+        <button type="submit" class="email-submit">Send It</button>
+      </form>
+      <div class="email-note reveal">No spam. Unsubscribe anytime.</div>
+      <div class="email-success" id="emailSuccess">Check your inbox — it's on the way.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Nani's <em>Knees.</em></div>
+          <div class="footer-tag">A strength training program for women who already know their body is a weapon — and want to sharpen it.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Program</h4>
+          <a href="#inside">What's Inside</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">The App</a>
+          <a href="#">Sample Week</a>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Nani's Knees. All rights reserved.</span>
+        <span>Designed with intention.</span>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+
+  // Email form (demo)
+  document.getElementById('emailForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('emailSuccess').classList.add('show');
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>
