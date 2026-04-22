@@ -1169,10 +1169,13 @@
       </div>
       <h2 class="reveal">Get the first <em>chapter.</em></h2>
       <p class="lede reveal" style="margin-left: auto; margin-right: auto; text-align: center;">Drop your email and we'll send you the Phase 1 preview — four exercises, full instructions, completely free. See if the voice and the structure work for you before you commit.</p>
-      <form class="email-form reveal" id="emailForm">
-        <input type="email" required placeholder="your@email.com" class="email-input"/>
-        <button type="submit" class="email-submit">Send It</button>
-      </form>
+      <form class="email-form reveal" id="emailForm"
+      action="https://app.kit.com/forms/9357874/subscriptions"
+      method="post"
+      target="_blank">
+  <input type="email" name="email_address" required placeholder="your@email.com" class="email-input"/>
+  <button type="submit" class="email-submit">Send It</button>
+</form>
       <div class="email-note reveal">No spam. Unsubscribe anytime.</div>
       <div class="email-success" id="emailSuccess">Check your inbox — it's on the way.</div>
     </div>
@@ -1227,10 +1230,11 @@
 
   // Email form (demo)
   document.getElementById('emailForm').addEventListener('submit', (e) => {
-    e.preventDefault();
+  setTimeout(() => {
     document.getElementById('emailSuccess').classList.add('show');
     e.target.reset();
-  });
+  }, 500);
+});
 </script>
 
 </body>
